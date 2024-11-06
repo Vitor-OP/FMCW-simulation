@@ -5,7 +5,17 @@ This repository contains a series of Jupyter notebooks for simulating and unders
 
 ## FMCW Radar Overview
 
-Frequency-Modulated Continuous Wave (FMCW) radars work by transmitting a signal that continuously varies in frequency over a specific range. When this signal reflects off a target, the radar measures the frequency difference between the transmitted and received signals. This difference, known as the beat frequency, is directly related to the distance to the target. By analyzing changes in beat frequency over time, the radar can also determine the relative velocity of moving targets. FMCW radar is widely used for applications requiring precise distance and speed measurements, such as automotive sensing and industrial monitoring.
+Frequency-Modulated Continuous Wave (FMCW) radar operates by transmitting a continuous waveform whose frequency is modulated over time in a known pattern, typically in a sawtooth or triangular wave. This modulation creates a frequency chirp, meaning the frequency increases (up-chirp) or decreases (down-chirp) linearly over a specific period. 
+
+The radar measures the range and velocity of targets by analyzing the difference in frequency (beat frequency) between the transmitted and received signals. This frequency difference is directly related to the time delay, which corresponds to the target's distance, while the Doppler shift embedded in the signal’s phase variation provides information about the target's velocity.
+
+Key steps in the FMCW algorithm include:
+1. **Chirp Generation**: A local oscillator generates the chirped signal, which is amplified and transmitted.
+2. **Signal Reception and Mixing**: The received echo, reflected off targets, is mixed with a portion of the transmitted signal. This mixing produces an intermediate frequency (IF) signal, or beat signal, containing the beat frequency, which is proportional to the range of the target.
+3. **FFT Processing**: Fast Fourier Transform (FFT) processes are applied to the beat signal to obtain the range and Doppler profiles. Range FFT isolates targets based on distance, while Doppler FFT extracts velocity information by analyzing phase shifts across multiple chirps.
+4. **Range-Doppler Map Formation**: The combined range and Doppler data create a 2D map, enabling simultaneous detection of distance and speed.
+
+This method achieves high resolution in both range and velocity, essential for applications like automotive radars, where precise measurements are critical for object detection and tracking.
 
 <img src="images/chirp.png" alt="Alt text" width="500"/>
 
