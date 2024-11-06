@@ -1,11 +1,16 @@
 # TI FMCW Radar Simulation and Parameter Estimation Tools
 
-This repository contains a series of Jupyter notebooks for simulating and understanding the Texas Instruments FMCW radar system, specifically focusing on AWR boards. These notebooks serve both pedagogical and practical purposes, from learning key radar concepts to calculating essential parameters for radar configuration. The notebook contains inline comments explaining parameter choices and calculations. In particular, `From-Parameters-Chirp-Simulation.ipynb` includes detailed explanations for each radar parameter to help users understand the simulation's behavior and outcomes.
+This repository contains a series of Jupyter notebooks for simulating and understanding the Texas Instruments FMCW radar system, specifically focusing on AWR boards. These notebooks serve both pedagogical and practical purposes, from learning key radar concepts to calculating essential parameters for radar configuration. The notebook contains inline comments explaining parameter choices and calculations. In particular, `From-Parameters-Chirp-Simulation.ipynb` includes detailed explanations for each radar parameter to help users understand the simulation's behavior and outcomes, besides having functions to import and export configurations to .cfg config files used in the SDK GUI visualizer from Texas Instrument.
 
 
 ## FMCW Radar Overview
 
 Frequency-Modulated Continuous Wave (FMCW) radars work by transmitting a signal that continuously varies in frequency over a specific range. When this signal reflects off a target, the radar measures the frequency difference between the transmitted and received signals. This difference, known as the beat frequency, is directly related to the distance to the target. By analyzing changes in beat frequency over time, the radar can also determine the relative velocity of moving targets. FMCW radar is widely used for applications requiring precise distance and speed measurements, such as automotive sensing and industrial monitoring.
+
+![test of image](images/chirp.png)
+![test of image](images/fft of chirps.png)
+![test of image](images/fft resolution.png)
+![test of image](fmwc.png)
 
 ## Overview of Notebooks
 
