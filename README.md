@@ -9,7 +9,9 @@ Frequency-Modulated Continuous Wave (FMCW) radar operates by transmitting a cont
 
 <img src="images/chirp.png" alt="Alt text" width="500"/>
 
-The radar measures the range and velocity of targets by analyzing the difference in frequency (beat frequency or intermediate frequency) between the transmitted and received signals. This frequency difference is directly related to the time delay, which corresponds to the target's distance, while the Doppler shift embedded in the signal’s phase variation provides information about the target's velocity. It is possible to see in the image bellow how the mixed signal results in a constant frequency that is directly proportional to the signal's distance travelled.
+The radar measures the range and velocity of targets by analyzing the difference in frequency (beat frequency or intermediate frequency) between the transmitted and received signals. This frequency difference is directly related to the time delay, which corresponds to the target's distance, while the Doppler shift embedded in the signal’s phase variation provides information about the target's velocity.
+
+It is possible to see in the image bellow how the mixed signal results in a constant frequency that is directly proportional to the signal's distance travelled.
 
 <img src="images/fmcw.png" alt="Alt text" width="500"/>
 
