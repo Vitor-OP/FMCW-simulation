@@ -9,9 +9,9 @@ Frequency-Modulated Continuous Wave (FMCW) radars work by transmitting a signal 
 
 ![test of image](images/chirp.png)
 
-![test of image](images/fft of chirps.png)
+![test of image](images/fft-of-chirps.png)
 
-![test of image](images/fft resolution.png)
+![test of image](images/fft-resolution.png)
 
 ![test of image](fmwc.png)
 
