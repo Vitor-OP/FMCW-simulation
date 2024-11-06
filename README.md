@@ -8,8 +8,11 @@ This repository contains a series of Jupyter notebooks for simulating and unders
 Frequency-Modulated Continuous Wave (FMCW) radars work by transmitting a signal that continuously varies in frequency over a specific range. When this signal reflects off a target, the radar measures the frequency difference between the transmitted and received signals. This difference, known as the beat frequency, is directly related to the distance to the target. By analyzing changes in beat frequency over time, the radar can also determine the relative velocity of moving targets. FMCW radar is widely used for applications requiring precise distance and speed measurements, such as automotive sensing and industrial monitoring.
 
 ![test of image](images/chirp.png)
+
 ![test of image](images/fft of chirps.png)
+
 ![test of image](images/fft resolution.png)
+
 ![test of image](fmwc.png)
 
 ## Overview of Notebooks
