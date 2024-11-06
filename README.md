@@ -5,19 +5,24 @@ This repository contains a series of Jupyter notebooks for simulating and unders
 
 ## FMCW Radar Overview
 
-Frequency-Modulated Continuous Wave (FMCW) radar operates by transmitting a continuous waveform whose frequency is modulated over time in a known pattern, typically in a sawtooth or triangular wave. This modulation creates a frequency chirp, meaning the frequency increases (up-chirp) or decreases (down-chirp) linearly over a specific period. 
+Frequency-Modulated Continuous Wave (FMCW) radar operates by transmitting a continuous waveform whose frequency is modulated over time with a constant rate. This modulation creates a pulse signal called chirp.
 
-The radar measures the range and velocity of targets by analyzing the difference in frequency (beat frequency) between the transmitted and received signals. This frequency difference is directly related to the time delay, which corresponds to the target's distance, while the Doppler shift embedded in the signal’s phase variation provides information about the target's velocity.
+<img src="images/chirp.png" alt="Alt text" width="500"/>
+
+The radar measures the range and velocity of targets by analyzing the difference in frequency (beat frequency or intermediate frequency) between the transmitted and received signals. This frequency difference is directly related to the time delay, which corresponds to the target's distance, while the Doppler shift embedded in the signal’s phase variation provides information about the target's velocity.
+
+<img src="images/fmcw.png" alt="Alt text" width="500"/>
 
 Key steps in the FMCW algorithm include:
 1. **Chirp Generation**: A local oscillator generates the chirped signal, which is amplified and transmitted.
-2. **Signal Reception and Mixing**: The received echo, reflected off targets, is mixed with a portion of the transmitted signal. This mixing produces an intermediate frequency (IF) signal, or beat signal, containing the beat frequency, which is proportional to the range of the target.
+2. **Signal Reception and Mixing**: The received echo, reflected off targets, is mixed with a portion of the transmitted signal. This mixing produces an intermediate frequency (IF) signal which is directly proportional to the range of the target.
 3. **FFT Processing**: Fast Fourier Transform (FFT) processes are applied to the beat signal to obtain the range and Doppler profiles. Range FFT isolates targets based on distance, while Doppler FFT extracts velocity information by analyzing phase shifts across multiple chirps.
 4. **Range-Doppler Map Formation**: The combined range and Doppler data create a 2D map, enabling simultaneous detection of distance and speed.
 
+<img src="images/fft-of-chirps.png" alt="Alt text" width="400"/>
+
 This method achieves high resolution in both range and velocity, essential for applications like automotive radars, where precise measurements are critical for object detection and tracking.
 
-<img src="images/chirp.png" alt="Alt text" width="500"/>
 
 ## Overview of Notebooks
 
@@ -28,16 +33,19 @@ This method achieves high resolution in both range and velocity, essential for a
      - Understand the relationship between signal sampling rate and resolution in velocity and distance measurements.
 
 2. **exercises FFT.ipynb**
-   - A focused exercise notebook on Fast Fourier Transform (FFT), highlighting how different sampling rates affect resolution. Understanding this concept is crucial to adjusting the radar's parameters for desired velocity and distance resolutions.
+   - A focused exercise notebook on Fast Fourier Transform (FFT), highlighting the manipulation of resolution. Understanding this concept is crucial to adjusting the radar's parameters for desired velocity and distance resolutions with the tradeoff in processing time.
    - **Key Learning Goals:**
-     - Explore the impact of sampling rate (sampling frequency) on FFT resolution.
-     - Connect sampling rate choices with changes in velocity and distance resolution in radar data analysis.
+     - The impact of sampling rate, sample quantities and zero padding on FFT resolution.
+       
+<img src="images/fft-resolutions.png" alt="Alt text" width="650"/>
 
 3. **parameters_estimators.ipynb**
    - This practical notebook calculates the required input parameters for configuring AWR radar boards based on desired operational specifications. It considers target resolution, maximum detectable velocity, and distance, translating these needs into specific radar configuration values.
    - **Key Features:**
      - Input necessary for AWR radar configuration based on resolution and operational range requirements.
      - Provides parameter calculations tailored for TI AWR boards, aiding in accurate and efficient radar configuration.
+     - Automatic import and export .cfg files.
+     - Built functions to import and export .cfg config files with directly compatibility to SDK GUI visualizer from Texas Instrument.
 
 4. **From-Parameters-Chirp-Simulation.ipynb**
    - Using configuration data from TI's default SDK, this notebook simulates the theoretical behavior of the radar system. The simulation is organized in a class-based structure, which improves readability and usability. Each parameter used in the simulation is explained within the code comments for clarity.
