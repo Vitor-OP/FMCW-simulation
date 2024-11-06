@@ -32,21 +32,6 @@ Frequency-Modulated Continuous Wave (FMCW) radars work by transmitting a signal 
      - Class-oriented code structure for easy customization and reusability.
      - Simulates radar behavior using TI SDK configuration files, providing insights into how specific settings affect radar operation.
 
-## Requirements
-
-- Python 3.x
-- Jupyter Notebook
-- Dependencies listed in `requirements.txt` (if included)
-
-## How to Use
-
-1. Clone the repository:
-   git clone <repository-url>
-2. Install necessary dependencies:
-   pip install -r requirements.txt
-3. Open the notebooks in Jupyter:
-   jupyter notebook
-
 ## Parameter Descriptions
 
 Each notebook contains inline comments explaining parameter choices and calculations. In particular, `From-Parameters-Chirp-Simulation.ipynb` includes detailed explanations for each radar parameter to help users understand the simulation's behavior and outcomes.
