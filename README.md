@@ -1,6 +1,7 @@
 # TI FMCW Radar Simulation and Parameter Estimation Tools
 
-This repository contains a series of Jupyter notebooks for simulating and understanding the Texas Instruments FMCW radar system, specifically focusing on AWR boards. These notebooks serve both pedagogical and practical purposes, from learning key radar concepts to calculating essential parameters for radar configuration.
+This repository contains a series of Jupyter notebooks for simulating and understanding the Texas Instruments FMCW radar system, specifically focusing on AWR boards. These notebooks serve both pedagogical and practical purposes, from learning key radar concepts to calculating essential parameters for radar configuration. The notebook contains inline comments explaining parameter choices and calculations. In particular, `From-Parameters-Chirp-Simulation.ipynb` includes detailed explanations for each radar parameter to help users understand the simulation's behavior and outcomes.
+
 
 ## FMCW Radar Overview
 
@@ -31,7 +32,4 @@ Frequency-Modulated Continuous Wave (FMCW) radars work by transmitting a signal 
    - **Key Features:**
      - Class-oriented code structure for easy customization and reusability.
      - Simulates radar behavior using TI SDK configuration files, providing insights into how specific settings affect radar operation.
-
-## Parameter Descriptions
-
-Each notebook contains inline comments explaining parameter choices and calculations. In particular, `From-Parameters-Chirp-Simulation.ipynb` includes detailed explanations for each radar parameter to help users understand the simulation's behavior and outcomes.
+     - Built functions to import and export .cfg config files with directly compatibility to SDK GUI visualizer from Texas Instrument.
